@@ -58,31 +58,31 @@ static async Task Main()
     //     
     // }
     
-    // Socket message MT%
-    await Socket_Service.Receive_Message_MT5();
-    
-    while (true)
-    {
-        string message = null;
-    
-        lock (Socket_Service.queueLock)
-        {
-            message = Socket_Service.queueMT5.Dequeue();
-        }
-    
-        if (message != null)
-        {
-            Console.WriteLine($"Processing message: {message}");
-            Console.WriteLine($"Size: {Socket_Service.queueMT5.Size()}");
-            await Socket_Service.Send_Message(JsonConvert.DeserializeObject<Message>(message));
-            await Task.Delay(TimeSpan.FromSeconds(1));    
-        }
-        else
-        {
-            await Task.Delay(TimeSpan.FromSeconds(1));
-        }
-        
-    }
+    // Socket message MT5
+    // await Socket_Service.Receive_Message_MT5();
+    //
+    // while (true)
+    // {
+    //     string message = null;
+    //
+    //     lock (Socket_Service.queueLock)
+    //     {
+    //         message = Socket_Service.queueMT5.Dequeue();
+    //     }
+    //
+    //     if (message != null)
+    //     {
+    //         Console.WriteLine($"Processing message: {message}");
+    //         Console.WriteLine($"Size: {Socket_Service.queueMT5.Size()}");
+    //         await Socket_Service.Send_Message(JsonConvert.DeserializeObject<Message>(message));
+    //         await Task.Delay(TimeSpan.FromSeconds(1));    
+    //     }
+    //     else
+    //     {
+    //         await Task.Delay(TimeSpan.FromSeconds(1));
+    //     }
+    //     
+    // }
 
 }
 

@@ -5,7 +5,7 @@ namespace HandleMessage.Services;
 
 public class Socket_Service
 {
-    private static readonly SocketIOClient.SocketIO _client = new SocketIOClient.SocketIO("https://api.dautungoaite.online/");
+    private static readonly SocketIOClient.SocketIO _client = new SocketIOClient.SocketIO("http://localhost:4000/");
     public static Queue queue = new Queue();
     public static Queue queueMT5 = new Queue();
     public static readonly object queueLock = new object(); // Lock for thread safety

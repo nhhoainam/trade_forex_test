@@ -45,7 +45,7 @@ public class ConsumerMT5
             Console.WriteLine($"Normal MT5 Service: {message}");
             var json = JsonConvert.DeserializeObject<Message>(message);
             
-            await _producer.SendMessage(json);
+            await _producer.SendMessageMT5(json);
             
             // Xử lý dữ liệu trong đây
             _channel.BasicAck(ea.DeliveryTag, false);

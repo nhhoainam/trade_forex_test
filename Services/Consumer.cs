@@ -23,6 +23,10 @@ public class Consumer
                    UserName = "admin",
                    Password = "admin123"
                };
+               // _factory = new ConnectionFactory
+               // {
+               //     HostName = "localhost",
+               // };
                _connection = _factory.CreateConnection();
                _channel = _connection.CreateModel();
                _producer = new Producer();
